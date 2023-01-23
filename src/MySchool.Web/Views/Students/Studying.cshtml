@@ -1,0 +1,16 @@
+﻿@using MySchool.Services.ViewModels.Students;
+@model IEnumerable<StudentShortViewModel>
+<h2 style="text-align:center">Students</h2>
+<table class="studying-students-table">
+	<tbody>
+		@{
+			foreach(var student in Model)
+			{
+				<tr>
+					<td class="studying-students-name">@student.Info</td>
+					<td>@(student.Charters.ToString() + " charters")</td>
+				</tr>
+			}
+		}
+	</tbody>
+</table>

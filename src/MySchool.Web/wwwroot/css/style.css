@@ -640,3 +640,26 @@ footer {
 a {
 	outline: none;
 }
+.studying-students-table {
+	background-color: cadetblue;
+	width: 80%;
+	margin: auto;
+	margin-top: 20px;
+}
+
+.studying-students-name {
+	width: 70%;
+}
+.overall-image-box {
+	float: left;
+	width: 50%;
+}
+
+.overall-image {
+	width: 100%;
+}
+
+.overall-info {
+	float: right;
+	margin: 50px 100px 10px 0px;
+}

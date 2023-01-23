@@ -6,4 +6,5 @@ public class OverallViewModel
 
 	public long Students { get; set; }
 
+	public long StudentAll { get; set; }
 }

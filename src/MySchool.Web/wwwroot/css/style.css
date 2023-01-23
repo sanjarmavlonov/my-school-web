@@ -640,6 +640,7 @@ footer {
 a {
 	outline: none;
 }
+
 .studying-students-table {
 	background-color: cadetblue;
 	width: 80%;
@@ -650,6 +651,7 @@ a {
 .studying-students-name {
 	width: 70%;
 }
+
 .overall-image-box {
 	float: left;
 	width: 50%;

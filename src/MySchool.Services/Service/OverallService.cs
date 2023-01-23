@@ -17,7 +17,8 @@ public class OverallService : BasicService, IOverallService
 		return new OverallViewModel
 		{
 			Students = _repository.Students.GetAll().Count(x => x.Studying),
-			Teachers = _repository.Employees.GetAll().Count()
+			Teachers = _repository.Employees.GetAll().Count(),
+			StudentAll = _repository.Students.GetAll().Count()
 		};
 	}
 }

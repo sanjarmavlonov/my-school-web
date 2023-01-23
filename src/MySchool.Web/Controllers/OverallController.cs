@@ -1,8 +1,10 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+
 using MySchool.Services.Interfaces.Services;
 
 namespace MySchool.Web.Controllers
 {
+	[Route("overall")]
 	public class OverallController : Controller
 	{
 		private readonly IOverallService _overallService;
@@ -15,8 +17,8 @@ namespace MySchool.Web.Controllers
 		[Route("")]
 		public async Task<ViewResult> Index()
 		{
-			var overall = Ok(await _overallService.GetInfo());
-			return View(overall);
+			var res = await _overallService.GetInfo();
+			return View("Overall", res);
 		}
 	}
 }

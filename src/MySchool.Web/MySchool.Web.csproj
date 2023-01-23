@@ -18,4 +18,8 @@
     <Folder Include="wwwroot\html\" />
   </ItemGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\MySchool.Services\MySchool.Services.csproj" />
+  </ItemGroup>
+
 </Project>

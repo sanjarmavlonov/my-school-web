@@ -1,0 +1,16 @@
+﻿@using MySchool.Services.ViewModels.Common;
+@model OverallViewModel
+<div class="overall-image-box">
+	<img class="overall-image" src="https://avatars.mds.yandex.net/get-altay/4324292/2a00000179322dd1f0cff5076cf89b82c3ee/XXL">
+</div>
+<div class="overall-info">
+	<h1>
+		@(Model.Students + " students")
+	</h1>
+	<h1>
+		@(Model.Teachers + " teachers")
+	</h1>
+	<h1>
+		@(Model.StudentAll+" students for all the time")
+	</h1>
+</div>

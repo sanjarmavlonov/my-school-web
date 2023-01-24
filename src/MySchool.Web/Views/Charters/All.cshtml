@@ -1,13 +1,13 @@
 ﻿@using MySchool.Services.ViewModels.Charters;
 @model IEnumerable<CharterShortViewModel>
 <h2 style="text-align:center">Charters</h2>
-<table class="studying-students-table">
+<table class="double-table">
 	<tbody>
 		@{
 			foreach(var charter in Model)
 			{
 				<tr>
-					<td class="studying-students-name">@charter.StudentInfo</td>
+					<td class="double-table-name">@charter.StudentInfo</td>
 					<td>@(charter.Created.ToShortDateString() + " created")</td>
 				</tr>
 			}

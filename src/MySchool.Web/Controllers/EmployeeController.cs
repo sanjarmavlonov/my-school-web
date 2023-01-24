@@ -29,19 +29,11 @@ public class EmployeeController : Controller
 	public async Task<IActionResult> Register(EmployeeRegisterDto dto)
 	{
 		if(!ModelState.IsValid)
-		{
 			if(await _service.RegisterAsync(dto))
-			{
 				return RedirectToAction("login", "employee", new { area = "" });
-			}
 			else
-			{
 				return RedirectToAction("register", "employee", new { area = "" });
-			}
-		}
 		else
-		{
 			return RedirectToAction("register", "employee", new { area = "" });
-		}
 	}
 }

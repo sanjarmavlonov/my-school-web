@@ -17,7 +17,7 @@ namespace MySchool.Web.Controllers
 			_studentService = studentService;
 		}
 
-		[HttpGet("")]
+		[HttpGet("now")]
 		[AllowAnonymous]
 		public async Task<ViewResult> GetAllAsync(int page = 1)
 		{

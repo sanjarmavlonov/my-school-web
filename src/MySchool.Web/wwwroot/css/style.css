@@ -1,82 +1,118 @@
 body {
-    background-color: darkgray;
+	background-color: darkgray;
 }
 
 .navbar {
-    overflow: hidden;
-    background-color: #333;
-    font-family: Arial, Helvetica, sans-serif;
-    width: 90%;
-    margin: auto;
-    border-radius: 20px;
+	overflow: hidden;
+	background-color: #333;
+	font-family: Arial, Helvetica, sans-serif;
+	width: 90%;
+	margin: auto;
+	border-radius: 20px;
 }
 
-.navbar a {
-    float: left;
-    font-size: 16px;
-    color: white;
-    text-align: center;
-    padding: 14px 16px;
-    text-decoration: none;
-}
+	.navbar a {
+		float: left;
+		font-size: 16px;
+		color: white;
+		text-align: center;
+		padding: 14px 16px;
+		text-decoration: none;
+	}
 
 .dropdown {
-    float: left;
-    overflow: hidden;
+	float: left;
+	overflow: hidden;
 }
 
-.dropdown .dropbtn {
-    font-size: 16px;
-    border: none;
-    outline: none;
-    color: white;
-    padding: 14px 16px;
-    background-color: inherit;
-    font-family: inherit;
-    margin: 0;
-}
+	.dropdown .dropbtn {
+		font-size: 16px;
+		border: none;
+		outline: none;
+		color: white;
+		padding: 14px 16px;
+		background-color: inherit;
+		font-family: inherit;
+		margin: 0;
+	}
 
-.navbar a:hover,
-.dropdown:hover .dropbtn {
-    background-color: cadetblue;
-}
+	.navbar a:hover,
+	.dropdown:hover .dropbtn {
+		background-color: cadetblue;
+	}
 
 .dropdown-content {
-    display: none;
-    position: absolute;
-    background-color: #333;
-    min-width: 160px;
-    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
-    z-index: 1;
+	display: none;
+	position: absolute;
+	background-color: #333;
+	min-width: 160px;
+	box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+	z-index: 1;
 }
 
-.dropdown-content a {
-    float: none;
-    color: white;
-    padding: 12px 16px;
-    text-decoration: none;
-    display: block;
-    text-align: left;
-}
+	.dropdown-content a {
+		float: none;
+		color: white;
+		padding: 12px 16px;
+		text-decoration: none;
+		display: block;
+		text-align: left;
+	}
 
-.dropdown-content a:hover {
-    background-color: rgb(118, 109, 109);
-}
+		.dropdown-content a:hover {
+			background-color: rgb(118, 109, 109);
+		}
 
 .dropdown:hover .dropdown-content {
-    display: block;
+	display: block;
 }
 
 footer div {
-    width: 20%;
-    float: left;
-    text-align: center;
-    margin-bottom: 20px;
+	width: 20%;
+	float: left;
+	text-align: center;
+	margin-bottom: 20px;
+	margin-top: 20px;
 }
 
 footer a {
-    text-decoration: none;
-    color: white;
-    font-family: monospace;
-    font-size: 20px;
+	text-decoration: none;
+	color: white;
+	font-family: monospace;
+	font-size: 20px;
+}
+
+.overall-image-box {
+	float: left;
+	width: 50%;
+}
+
+.overall-image {
+	width: 100%;
+	margin: 20px;
+}
+
+.overall-info {
+	float: right;
+	margin: 50px 100px 10px 0px;
+}
+
+.double-table {
+	background-color: cadetblue;
+	border-collapse: collapse;
+	width: 80%;
+	margin: auto;
+	margin-top: 20px;
+	border: 5px solid cadetblue;
+}
+
+	.double-table td {
+		font-size: 20px;
+		border-top: 2px solid gray;
+		border-bottom: 2px solid darkgray;
+		padding: 5px;
+	}
+
+.double-table-name {
+	width: 70%;
 }

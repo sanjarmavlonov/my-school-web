@@ -12,36 +12,46 @@
 <body>
 	<header>
 		<div class="container">
-		<div class="navbar">
-			<a href="#home">Home</a>
-			<a href="#charters">Charters</a>
-			<a href="#articles">Articles</a>
-			<a href="#employees">Employees</a>
-			<div class="dropdown">
-				<button class="dropbtn">Students
-					<i class="fa fa-caret-down"></i>
-				</button>
-				<div class="dropdown-content">
-					<a href="#all-students">All</a>
-					<a href="#now-students">Studying now</a>
+			<div class="navbar">
+				<a asp-controller="overall" asp-action="">Home</a>
+				<a asp-controller="charters" asp-action="">Charters</a>
+				<a href="#articles">Articles</a>
+				<a href="#employees">Employees</a>
+				<div class="dropdown">
+					<button class="dropbtn">
+						Students
+						<i class="fa fa-caret-down"></i>
+					</button>
+					<div class="dropdown-content">
+						<a asp-controller="students" asp-action="all">All</a>
+						<a asp-controller="students" asp-action="now">Studying now</a>
+					</div>
+				</div>
+				<div class="dropdown" style="float:right">
+					<button class="dropbtn">
+						Account
+						<i class="fa fa-caret-down"></i>
+					</button>
+					<div class="dropdown-content">
+						<a asp-controller="employee" asp-action="login">Log In</a>
+						<a asp-controller="employee" asp-action="register">Register</a>
+					</div>
 				</div>
 			</div>
-			<a href="#account" style="float:right;">Account</a>
 		</div>
 	</header>
 	<div class="container">
 		<main role="main" class="pb-3">
 			@RenderBody()
-	<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
-	<footer>
-		<!-- <div> -->
-		<div><a href="#github">GitHub</a></div>
-		<div><a href="#telegram">Telegram</a></div>
-		<div><a href="#facebook">Facebook</a></div>
-		<div><a href="#linkedin">LinkedIn</a></div>
-		<div><a href="#email">Email</a></div>
-		<!-- </div> -->
-	</footer>
+			<footer>
+				<div><a href="#github">GitHub</a></div>
+				<div><a href="#telegram">Telegram</a></div>
+				<div><a href="#facebook">Facebook</a></div>
+				<div><a href="#linkedin">LinkedIn</a></div>
+				<div><a href="#email">Email</a></div>
+			</footer>
+		</main>
+	</div>
 </body>
 
 </html>

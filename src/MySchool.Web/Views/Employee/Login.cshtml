@@ -1,1 +1,31 @@
-﻿<h1>Login</h1>
+﻿@using MySchool.Services.Dtos.Employees;
+@model EmployeeRegisterDto;
+@{
+    Layout = "_AccountLayout.cshtml";
+}
+
+<div class="card w-500px h-470px mt-20 mb-100" style="margin-left:auto; margin-right:auto;">
+    <div class="py-10 pe-10 px-10">
+        <form asp-area="" asp-controller="accounts" asp-action="login" method="post">
+            <label class="form-label fs-2"></label>
+            <div class="mt-8">
+                <label class="required form-label">Email</label>
+                <input type="email" asp-for=Email class="form-control form-control-solid" placeholder="example@gmail.com" />
+                <span asp-validation-for="Email" class="text-danger"></span>
+            </div>
+            <div class="mt-8">
+                <label class="required form-label">Parol</label>
+                <input type="password" asp-for=Password class="form-control form-control-solid" />
+                <span asp-validation-for="Password" class="text-danger"></span>
+            </div>
+            <div class="mt-10">
+                <input type="submit" class="btn btn-success" style="width:100%;" value="Kirish" />
+            </div>
+            <div class="mt-8 mb-8">
+                <a class="btn btn-primary" style="width:100%;" asp-controller="accounts" asp-action="register">
+                    Ro'yxatdan o'tish
+                </a>
+            </div>
+        </form>
+    </div>
+</div>

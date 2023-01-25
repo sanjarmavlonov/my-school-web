@@ -16,10 +16,6 @@
   </ItemGroup>
 
   <ItemGroup>
-    <None Include="wwwroot\css\about-us.html" />
-  </ItemGroup>
-
-  <ItemGroup>
     <Folder Include="wwwroot\html\" />
   </ItemGroup>
 

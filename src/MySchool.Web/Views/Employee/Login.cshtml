@@ -11,12 +11,14 @@
 		</h2>
 		<div class="section">
 			<input type="email" asp-for=Email placeholder="email">
-			<span asp-validation-for=Email></span>
 		</div>
+		<span asp-validation-for=Email></span>
 		<div class="section">
 			<input type="password" asp-for=Password placeholder="password">
-			<span asp-validation-for=Password></span>
 		</div>
-		<input type="submit" value="Submit!">
+		<span asp-validation-for=Password></span>
+		<div>
+			<input type="submit" value="Submit!">
+		</div>
 	</form>
 </div>

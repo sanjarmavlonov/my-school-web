@@ -25,15 +25,36 @@ public class EmployeeController : Controller
 	{
 		return View("Register");
 	}
-	[HttpPost]
+	[HttpPost("register")]
 	public async Task<IActionResult> Register(EmployeeRegisterDto dto)
 	{
-		if(!ModelState.IsValid)
+		if(ModelState.IsValid)
 			if(await _service.RegisterAsync(dto))
 				return RedirectToAction("login", "employee", new { area = "" });
 			else
 				return RedirectToAction("register", "employee", new { area = "" });
 		else
 			return RedirectToAction("register", "employee", new { area = "" });
+	}
+	[HttpPost("login")]
+	public async Task<IActionResult> Login(EmployeeLoginDto dto)
+	{
+		if(ModelState.IsValid)
+		{
+			try
+			{
+				var token = await _service.LoginAsync(dto);
+				HttpContext.Response.Cookies.Append("X-Access-Token", token);
+				return RedirectToAction("", "overall");
+			}
+			catch
+			{
+				return Login();
+			}
+		}
+		else
+		{
+			return Login();
+		}
 	}
 }

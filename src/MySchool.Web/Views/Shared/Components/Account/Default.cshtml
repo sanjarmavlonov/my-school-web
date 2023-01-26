@@ -1,0 +1,12 @@
+﻿@using MySchool.Services.ViewModels.Employees;
+@model EmployeeShortViewModel
+<div class="dropdown" style="float:right">
+	<button class="dropbtn">
+		@Model.Name
+		<i class="fa fa-caret-down"></i>
+	</button>
+	<div class="dropdown-content">
+		<a asp-controller="employee" asp-action="login">Employee</a>
+		<a asp-controller="student" asp-action="login">Student</a>
+	</div>
+</div>

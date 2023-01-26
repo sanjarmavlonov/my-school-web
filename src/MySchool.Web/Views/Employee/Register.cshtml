@@ -4,37 +4,25 @@
 	Layout = "_AccountLayout.cshtml";
 }
 
-<div class="card w-500px h-630px mt-10 mb-10" style="margin-left:auto; margin-right:auto;" style="background-color: darkgray">
-	<div class="py-10 pe-10 px-10">
-		<form asp-controller="employee" asp-action="register" method="post" >
-			<label class="form-label fs-2">Ro'yxatdan o'tish</label>
-			<div class="mt-5">
-				<label class="required form-label">Familiya</label>
-				<input type="text" asp-for=Name class="form-control form-control-solid" placeholder="Ismingizni kiriting" />
-				<span asp-validation-for="Name" class="text-danger"></span>
-			</div>
-
-			<div class="mt-8">
-				<label class="required form-label">Email</label>
-				<input type="email" asp-for=Email class="form-control form-control-solid" placeholder="example@gmail.com"/>
-				<span asp-validation-for="Email" class="text-danger"></span>
-			</div>
-			<div class="mt-8">
-				<label class="required form-label">Parol</label>
-				<input type="password" asp-for=Password class="form-control form-control-solid" />
-				<span asp-validation-for="Password" class="text-danger"></span>
-			</div>
-			<div class="mt-8">
-				<input type="submit" class="btn btn-success" style="width:100%;" value="Ro'yxatdan o'tish" />
-			</div>
-			<div class="mt-8 mb-8">
-				<a class="btn btn-primary" style="width:100%;" asp-controller="employee" asp-action="login">
-					<span class="svg-icon svg-icon-1">
-
-					</span>
-				   Kirish
-			   </a>
-			</div>
-		</form>
-	</div>
+<div class="register-card">
+		<form asp-action="register" asp-controller="employee">
+		<h2>
+			Register
+		</h2>
+		<div class="section">
+			<input type="email" asp-for=Email placeholder="email">
+		</div>
+		<span asp-validation-for=Email></span>
+		<div class="section">
+			<input type="name" asp-for=Name placeholder="name">
+		</div>
+		<span asp-validation-for=Name></span>
+		<div class="section">
+			<input type="password" asp-for=Password placeholder="password">
+		</div>
+		<span asp-validation-for=Password></span>
+		<div>
+			<input type="submit" value="Submit!">
+		</div>
+	</form>
 </div>

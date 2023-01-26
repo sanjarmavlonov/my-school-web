@@ -43,8 +43,8 @@ public class EmployeeService : BasicService, IEmployeeService
 	public async Task<string> LoginAsync(EmployeeLoginDto dto)
 	{
 		Employee? employee = await _repository.Employees.FirstOrDefaultAsync(x => x.Email == dto.Email);
-		if(employee is null)
-			throw new StatusCodeException(HttpStatusCode.NotFound, "Employee not found, Phone Number is incorrect!");
+		if (employee is null)
+			throw new ModelErrorException(nameof(dto.Email), "Bunday email bilan foydalanuchi mavjud emas!");
 		if(!employee.EmailVerified)
 			throw new StatusCodeException(HttpStatusCode.BadRequest, "Email not verified");
 		bool hashResult = _hasher.Verify(employee.Password, dto.Password, employee.Email);
@@ -53,7 +53,7 @@ public class EmployeeService : BasicService, IEmployeeService
 			return _authManager.GenerateToken(employee);
 		}
 		else
-			throw new StatusCodeException(HttpStatusCode.BadRequest, "Password is invalid!");
+			throw new ModelErrorException(nameof(dto.Password), "Parol xato terildi");
 	}
 
 	public async Task<bool> MakeAuthor(long id)

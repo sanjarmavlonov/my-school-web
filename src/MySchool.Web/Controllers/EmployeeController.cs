@@ -1,5 +1,5 @@
 ﻿using Microsoft.AspNetCore.Mvc;
-
+using MySchool.Services.Common.Exceptions;
 using MySchool.Services.Dtos.Employees;
 using MySchool.Services.Interfaces.Services;
 
@@ -44,8 +44,17 @@ public class EmployeeController : Controller
 			try
 			{
 				var token = await _service.LoginAsync(dto);
-				HttpContext.Response.Cookies.Append("X-Access-Token", token);
-				return RedirectToAction("", "overall");
+				HttpContext.Response.Cookies.Append("X-Access-Token", token, new CookieOptions()
+				{
+					HttpOnly = true,
+					SameSite = SameSiteMode.Strict
+				});
+				return RedirectToAction("Index", "Home", new { area = "" });
+			}
+			catch (ModelErrorException modelError)
+			{
+				ModelState.AddModelError(modelError.Property, modelError.Message);
+				return Login();
 			}
 			catch
 			{
